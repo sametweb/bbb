@@ -152,7 +152,7 @@ body {
         display: flex; }
         .wrapper header nav ul li {
           padding: 2rem;
-          font-size: 18px;
+          font-size: 1.8rem;
           font-family: "Quicksand";
           text-transform: uppercase; }
           .wrapper header nav ul li:hover {
