@@ -135,7 +135,7 @@ body {
   background-color: rgba(180, 4, 92, 0.2); }
 
 .wrapper {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto; }
   .wrapper header {
     display: flex;
