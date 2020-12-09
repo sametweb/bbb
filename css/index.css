@@ -134,45 +134,48 @@ html {
 body {
   background-color: rgba(180, 4, 92, 0.2); }
 
-.wrapper {
+.wrapper header {
+  display: flex;
+  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto; }
-  .wrapper header {
+  .wrapper header img {
+    width: 200px;
+    height: 200px;
+    margin: 1rem 0 0 0; }
+  .wrapper header nav {
     display: flex;
-    justify-content: space-between; }
-    .wrapper header img {
-      width: 200px;
-      height: 200px;
-      margin: 1rem 0 0 0; }
-    .wrapper header nav {
-      display: flex;
-      align-items: center;
-      height: 200px; }
-      .wrapper header nav ul {
-        display: flex; }
-        .wrapper header nav ul li {
-          padding: 2rem;
-          font-size: 1.8rem;
-          font-family: "Quicksand";
-          text-transform: uppercase; }
-          .wrapper header nav ul li:hover {
-            background-color: #b4045c;
-            color: white;
-            border-radius: 4rem; }
-  .wrapper .content {
-    margin: 50px 0 0 0; }
-    .wrapper .content .slider {
-      display: flex;
-      overflow-y: hidden;
-      overflow-x: scroll;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth; }
-      .wrapper .content .slider::-webkit-scrollbar {
-        display: none; }
-      .wrapper .content .slider .image {
-        margin: 0 20px 0 0;
-        scroll-snap-align: start; }
-        .wrapper .content .slider .image img {
-          height: 300px;
-          border-radius: 10px; }
+    align-items: center;
+    height: 200px; }
+    .wrapper header nav ul {
+      display: flex; }
+      .wrapper header nav ul li {
+        padding: 2rem;
+        font-size: 1.8rem;
+        font-family: "Quicksand";
+        text-transform: uppercase; }
+        .wrapper header nav ul li:hover {
+          background-color: #b4045c;
+          color: white;
+          border-radius: 4rem; }
+
+.wrapper .content {
+  margin: 50px 0 0 0; }
+  .wrapper .content .slider {
+    background-color: rgba(180, 4, 92, 0.8);
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth; }
+    .wrapper .content .slider::-webkit-scrollbar {
+      display: none; }
+    .wrapper .content .slider .image {
+      padding: 30px 0 30px 30px;
+      scroll-snap-align: start; }
+      .wrapper .content .slider .image:last-child {
+        padding-right: 30px; }
+      .wrapper .content .slider .image img {
+        height: 300px;
+        border-radius: 10px; }

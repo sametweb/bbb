@@ -15,12 +15,11 @@ body {
 }
 
 .wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-
   header {
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
 
     img {
       width: 200px;
@@ -51,7 +50,9 @@ body {
   }
   .content {
     margin: 50px 0 0 0;
+
     .slider {
+      background-color: rgba(180, 4, 92, 0.8);
       display: flex;
       overflow-y: hidden;
       overflow-x: scroll;
@@ -62,8 +63,11 @@ body {
         display: none;
       }
       .image {
-        margin: 0 20px 0 0;
+        padding: 30px 0 30px 30px;
         scroll-snap-align: start;
+        &:last-child {
+          padding-right: 30px;
+        }
         img {
           height: 300px;
           border-radius: 10px;
