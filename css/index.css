@@ -132,7 +132,7 @@ html {
   font-family: Montserrat; }
 
 body {
-  background-color: rgba(180, 4, 92, 0.2); }
+  background-color: #ffebcf; }
 
 .wrapper header {
   display: flex;
@@ -151,31 +151,37 @@ body {
       display: flex; }
       .wrapper header nav ul li {
         padding: 2rem;
+        margin-right: 1rem;
         font-size: 1.8rem;
         font-family: "Quicksand";
-        text-transform: uppercase; }
-        .wrapper header nav ul li:hover {
-          background-color: #b4045c;
+        text-transform: uppercase;
+        border-radius: 4rem;
+        border: 1px solid transparent; }
+        .wrapper header nav ul li:first-child {
+          background-color: #d3005e;
           color: white;
-          border-radius: 4rem; }
+          font-weight: bold; }
+        .wrapper header nav ul li:hover {
+          background-color: #d3005e;
+          color: white;
+          cursor: pointer;
+          border-color: white;
+          box-shadow: 3px 3px 3px #eab937; }
 
 .wrapper .content {
   margin: 50px 0 0 0; }
   .wrapper .content .slider {
-    background-color: rgba(180, 4, 92, 0.8);
-    display: flex;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth; }
-    .wrapper .content .slider::-webkit-scrollbar {
-      display: none; }
-    .wrapper .content .slider .image {
-      padding: 30px 0 30px 30px;
-      scroll-snap-align: start; }
-      .wrapper .content .slider .image:last-child {
-        padding-right: 30px; }
-      .wrapper .content .slider .image img {
+    background: #d3005e; }
+    .wrapper .content .slider .slider-inner-wrapper {
+      scroll-behavior: smooth;
+      padding: 30px;
+      display: flex;
+      overflow: auto;
+      white-space: nowrap; }
+      .wrapper .content .slider .slider-inner-wrapper::-webkit-scrollbar {
+        width: 1px;
+        height: 1px; }
+      .wrapper .content .slider .slider-inner-wrapper .image img {
         height: 300px;
+        margin-right: 30px;
         border-radius: 10px; }

@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-color: rgba(180, 4, 92, 0.2);
+  background-color: #ffebcf;
 }
 
 .wrapper {
@@ -35,14 +35,25 @@ body {
         display: flex;
         li {
           padding: 2rem;
+          margin-right: 1rem;
           font-size: 1.8rem;
           @include title();
           text-transform: uppercase;
+          border-radius: 4rem;
+          border: 1px solid transparent;
+
+          &:first-child {
+            background-color: #d3005e;
+            color: white;
+            font-weight: bold;
+          }
 
           &:hover {
-            background-color: #b4045c;
+            background-color: #d3005e;
             color: white;
-            border-radius: 4rem;
+            cursor: pointer;
+            border-color: white;
+            box-shadow: 3px 3px 3px #eab937;
           }
         }
       }
@@ -50,27 +61,24 @@ body {
   }
   .content {
     margin: 50px 0 0 0;
-
     .slider {
-      background-color: rgba(180, 4, 92, 0.8);
-      display: flex;
-      overflow-y: hidden;
-      overflow-x: scroll;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-      .image {
-        padding: 30px 0 30px 30px;
-        scroll-snap-align: start;
-        &:last-child {
-          padding-right: 30px;
+      background: #d3005e;
+      .slider-inner-wrapper {
+        scroll-behavior: smooth;
+        padding: 30px;
+        display: flex;
+        overflow: auto;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+          width: 1px;
+          height: 1px;
         }
-        img {
-          height: 300px;
-          border-radius: 10px;
+        .image {
+          img {
+            height: 300px;
+            margin-right: 30px;
+            border-radius: 10px;
+          }
         }
       }
     }

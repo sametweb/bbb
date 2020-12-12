@@ -14,16 +14,31 @@
         <img src="logo-256.png" />
         <nav>
           <ul>
-            <li>Products</li>
             <li>Place an Order</li>
+            <li>Products</li>
             <li>About Us</li>
             <li>Contact</li>
           </ul>
         </nav>
       </header>
       <section class="content">
-        <section class="slider">{{slider}}</section>
+        <section class="slider">
+          <section class="slider-inner-wrapper">{{slider}}</section>
+        </section>
       </section>
     </div>
+    <script type="text/javascript">
+      const target = document.querySelector(".slider-inner-wrapper");
+      target.addEventListener("wheel", (event) => {
+        const toLeft = event.deltaY < 0 && target.scrollLeft > 0;
+        const toRight =
+          event.deltaY > 0 &&
+          target.scrollLeft < target.scrollWidth - target.clientWidth;
+        if (toLeft || toRight) {
+          event.preventDefault();
+          target.scrollLeft += event.deltaY * 5;
+        }
+      });
+    </script>
   </body>
 </html>
