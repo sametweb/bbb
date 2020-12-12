@@ -13,6 +13,11 @@
       <header>
         <img src="logo-256.png" />
         <nav>
+          <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <ul>
             <li>Place an Order</li>
             <li>Products</li>
@@ -38,6 +43,14 @@
           event.preventDefault();
           target.scrollLeft += event.deltaY * 5;
         }
+      });
+      const burgerMenu = document.querySelector(".burger-menu");
+      burgerMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+        event.target.className =
+          event.target.className === "burger-menu"
+            ? "burger-menu open"
+            : "burger-menu";
       });
     </script>
   </body>

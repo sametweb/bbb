@@ -1,13 +1,19 @@
 @import "reset";
 @import url("https://fonts.googleapis.com/css?family=Quicksand|Montserrat&display=swap");
 
+@mixin title {
+  font-family: "Quicksand";
+}
+
+@mixin mobile {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
 html {
   font-size: 62.5%;
   font-family: Montserrat;
-}
-
-@mixin title {
-  font-family: "Quicksand";
 }
 
 body {
@@ -31,6 +37,7 @@ body {
       display: flex;
       align-items: center;
       height: 200px;
+
       ul {
         display: flex;
         li {
@@ -54,6 +61,69 @@ body {
             cursor: pointer;
             border-color: white;
             box-shadow: 3px 3px 3px #eab937;
+          }
+        }
+        @include mobile {
+          display: none;
+        }
+      }
+
+      .burger-menu {
+        display: none;
+        @include mobile {
+          height: 30px;
+          display: flex;
+          flex-direction: column;
+          margin: 0 10px 0 0;
+          cursor: pointer;
+          span {
+            transition: all 0.5s;
+            display: inline-block;
+            width: 32px;
+            height: 6px;
+            background-color: #333;
+            margin: 0 0 6px 0;
+            border-radius: 3px;
+            pointer-events: none;
+            &:last-child {
+              margin: 0;
+            }
+          }
+          &.open {
+            span {
+              &:nth-child(1) {
+                transform: rotate(45deg);
+                transform-origin: top left;
+                margin: 0;
+              }
+              &:nth-child(3) {
+                transform: rotate(315deg);
+                transform-origin: 18px 13px;
+                margin: 0;
+              }
+              &:nth-child(2) {
+                display: none;
+              }
+            }
+            & + ul {
+              display: flex;
+              flex-direction: column;
+              position: absolute;
+              left: 0;
+              top: 250px;
+              right: 0;
+              background: rgba(0, 0, 0, 0.9);
+              color: white;
+              padding: 10px;
+              li {
+                text-align: center;
+                border: 0;
+                margin: 0 0 2px 0;
+                &:hover {
+                  box-shadow: none;
+                }
+              }
+            }
           }
         }
       }
