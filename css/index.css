@@ -132,7 +132,7 @@ html {
   font-family: Montserrat; }
 
 body {
-  background-color: #ffebcf; }
+  background-color: #f4fffd; }
 
 .wrapper header {
   display: flex;
@@ -142,7 +142,7 @@ body {
   .wrapper header img {
     width: 200px;
     height: 200px;
-    margin: 1rem 0 0 0; }
+    margin: 1rem 0 0 1rem; }
   .wrapper header nav {
     display: flex;
     align-items: center;
@@ -217,8 +217,24 @@ body {
               .wrapper header nav .burger-menu.open + ul li:hover {
                 box-shadow: none; } }
 
+.wrapper .welcome {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center; }
+  .wrapper .welcome .welcome-wrapper {
+    padding: 30px 30px 50px 30px;
+    background: #ffe9f5;
+    background: linear-gradient(335deg, #ffe9f5 0%, #ffd2e6 100%); }
+    .wrapper .welcome .welcome-wrapper h1 {
+      font-size: 5rem;
+      font-family: "Quicksand";
+      margin: 0 0 3rem 0; }
+    .wrapper .welcome .welcome-wrapper p {
+      font-size: 2.2rem; }
+
 .wrapper .content {
-  margin: 50px 0 0 0; }
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), 0 -10px 40px rgba(0, 0, 0, 0.15); }
   .wrapper .content .slider {
     background: #d3005e; }
     .wrapper .content .slider .slider-inner-wrapper {
