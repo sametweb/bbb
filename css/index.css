@@ -233,20 +233,47 @@ body {
     .wrapper .welcome .welcome-wrapper p {
       font-size: 2.2rem; }
 
-.wrapper .content {
+.wrapper .products {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), 0 -10px 40px rgba(0, 0, 0, 0.15); }
-  .wrapper .content .slider {
+  .wrapper .products .slider {
     background: #d3005e; }
-    .wrapper .content .slider .slider-inner-wrapper {
+    .wrapper .products .slider .slider-inner-wrapper {
       scroll-behavior: smooth;
       padding: 30px;
       display: flex;
       overflow: auto;
       white-space: nowrap; }
-      .wrapper .content .slider .slider-inner-wrapper::-webkit-scrollbar {
+      .wrapper .products .slider .slider-inner-wrapper::-webkit-scrollbar {
         width: 1px;
         height: 1px; }
-      .wrapper .content .slider .slider-inner-wrapper .image img {
+      .wrapper .products .slider .slider-inner-wrapper .image img {
         height: 300px;
         margin-right: 30px;
         border-radius: 10px; }
+
+.wrapper .about-us {
+  background: #011936;
+  padding: 5rem 0; }
+  .wrapper .about-us .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: white; }
+    .wrapper .about-us .wrapper .content {
+      width: 60%;
+      padding: 0 2rem 0 0; }
+      .wrapper .about-us .wrapper .content h2 {
+        font-size: 3rem;
+        font-weight: bold;
+        font-family: "Quicksand";
+        text-transform: uppercase;
+        padding: 0 0 3rem 0; }
+      .wrapper .about-us .wrapper .content p {
+        font-size: 1.8rem;
+        line-height: 3rem;
+        margin: 0 0 2rem 0; }
+    .wrapper .about-us .wrapper .image {
+      width: 40%; }
+      .wrapper .about-us .wrapper .image img {
+        width: 100%; }

@@ -156,7 +156,7 @@ body {
     }
   }
 
-  .content {
+  .products {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15),
       0 -10px 40px rgba(0, 0, 0, 0.15);
     .slider {
@@ -177,6 +177,39 @@ body {
             margin-right: 30px;
             border-radius: 10px;
           }
+        }
+      }
+    }
+  }
+
+  .about-us {
+    background: #011936;
+    padding: 5rem 0;
+    .wrapper {
+      @include limited-width();
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      .content {
+        width: 60%;
+        padding: 0 2rem 0 0;
+        h2 {
+          font-size: 3rem;
+          font-weight: bold;
+          @include title();
+          text-transform: uppercase;
+          padding: 0 0 3rem 0;
+        }
+        p {
+          font-size: 1.8rem;
+          line-height: 3rem;
+          margin: 0 0 2rem 0;
+        }
+      }
+      .image {
+        width: 40%;
+        img {
+          width: 100%;
         }
       }
     }
