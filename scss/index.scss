@@ -16,9 +16,14 @@
   margin: 0 auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 html {
   font-size: 62.5%;
   font-family: Montserrat;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -52,13 +57,11 @@ body {
           text-transform: uppercase;
           border-radius: 4rem;
           border: 1px solid transparent;
-
-          &:first-child {
+          &.CTA {
             background-color: #d3005e;
             color: white;
             font-weight: bold;
           }
-
           &:hover {
             background-color: #d3005e;
             color: white;
@@ -210,6 +213,7 @@ body {
         width: 40%;
         img {
           width: 100%;
+          backdrop-filter: blur(5px);
         }
       }
     }
