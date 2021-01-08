@@ -3,31 +3,9 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const server = require("./server");
 const extractName = require("./utils/extractName");
-
-const months = {
-  "01": "January",
-  "02": "February",
-  "03": "March",
-  "04": "April",
-  "05": "May",
-  "06": "June",
-  "07": "July",
-  "08": "August",
-  "09": "September",
-  10: "October",
-  11: "November",
-  12: "December",
-};
-
-const formatDate = (date) => {
-  return (
-    months[date.substr(5, 2)] +
-    " " +
-    date.substr(8, 2) +
-    ", " +
-    date.substr(0, 4)
-  );
-};
+const formatDate = require("./utils/formatDate");
+const mailBody = require("./utils/mailBody");
+var path = require("path");
 
 const fs = require("fs");
 
@@ -41,6 +19,7 @@ server.use(express.urlencoded({ extended: false }));
 server.use(express.static(__dirname + cssPath));
 server.use(express.static(__dirname + imgPath));
 server.use(express.static(__dirname + optimizedPath));
+server.use(express.static(path.join(__dirname, "pages")));
 
 let page = "";
 let images = "";
@@ -80,34 +59,14 @@ server.post("/contact", (req, res) => {
     subject: `CONTACT: ${req.body.name} » ${
       req.body.event_type
     } on ${formatDate(req.body.date)}`,
-    html: `<table style="width:100%; border-collapse: collapse;">
-    <tr style="border: 1px solid #BBB;"><td style="border-right: 1px solid #BBB; padding: 5px; width: 200px; font-weight: bold;">Sender</td><td style="padding: 5px;">${
-      req.body.name
-    } (${req.body.email})</td></tr>
-    <tr style="border: 1px solid #BBB;"><td style="border-right: 1px solid #BBB; padding: 5px; width: 200px; font-weight: bold;">Phone</td><td style="padding: 5px;">${
-      req.body.phone
-    }</td></tr>
-    <tr style="border: 1px solid #BBB;"><td style="border-right: 1px solid #BBB; padding: 5px; width: 200px; font-weight: bold;">Event Type</td><td style="padding: 5px;">${
-      req.body.event_type
-    }</td></tr>
-    <tr style="border: 1px solid #BBB;"><td style="border-right: 1px solid #BBB; padding: 5px; width: 200px; font-weight: bold;">Event Date</td><td style="padding: 5px;">${formatDate(
-      req.body.date
-    )}</td></tr>
-    <tr style="border: 1px solid #BBB;"><td style="border-right: 1px solid #BBB; padding: 5px; width: 200px; font-weight: bold;">Event Location</td><td style="padding: 5px;">${
-      req.body.location
-    }</td></tr>
-    <tr style="border: 1px solid #BBB;"><td style="border-right: 1px solid #BBB; padding: 5px; width: 200px; font-weight: bold;">Message</td><td style="padding: 5px;">${
-      req.body.message
-    }</td></tr>
-    </table>`,
+    html: mailBody(req),
   };
 
-  // Attempt to send the email
   transporter.sendMail(mailOptions, (error, response) => {
     if (error) {
-      res.render("contact-failure"); // Show a page indicating failure
+      res.sendFile(path.join(__dirname + "/pages/email-success.html"));
     } else {
-      res.render("contact-success"); // Show a page indicating success
+      res.sendFile(path.join(__dirname + "/pages/email-success.html"));
     }
   });
 });
