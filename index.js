@@ -1,4 +1,4 @@
-require("dotenv").config();
+process.env.MY_ENV === "DEV" && require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
 const server = require("./server");
