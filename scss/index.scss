@@ -218,4 +218,58 @@ body {
       }
     }
   }
+
+  .contact {
+    padding: 5rem 0;
+    .wrapper {
+      @include limited-width();
+
+      h2 {
+        font-size: 3rem;
+        font-weight: bold;
+        @include title();
+        text-transform: uppercase;
+        padding: 0 0 3rem 0;
+      }
+      .content {
+        display: flex;
+        justify-content: space-between;
+        div > p {
+          width: 70%;
+          font-size: 1.8rem;
+          line-height: 3rem;
+          margin: 0 0 2rem 0;
+        }
+        form {
+          width: 400px;
+        }
+
+        fieldset {
+          margin: 0 0 15px 0;
+          font-size: 16px;
+        }
+
+        input,
+        select,
+        textarea {
+          width: 400px;
+          display: inline-block;
+          box-sizing: border-box;
+          padding: 8px;
+          font-size: 16px;
+          border: 1px solid #011936;
+        }
+        textarea {
+          height: 150px;
+        }
+        button {
+          padding: 1rem 2.5rem;
+          font-size: 1.6rem;
+          background: #011936;
+          color: white;
+          border: none;
+        }
+      }
+    }
+  }
 }

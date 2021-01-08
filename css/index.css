@@ -282,3 +282,45 @@ body {
       .wrapper .about-us .wrapper .image img {
         width: 100%;
         backdrop-filter: blur(5px); }
+
+.wrapper .contact {
+  padding: 5rem 0; }
+  .wrapper .contact .wrapper {
+    max-width: 1200px;
+    margin: 0 auto; }
+    .wrapper .contact .wrapper h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      font-family: "Quicksand";
+      text-transform: uppercase;
+      padding: 0 0 3rem 0; }
+    .wrapper .contact .wrapper .content {
+      display: flex;
+      justify-content: space-between; }
+      .wrapper .contact .wrapper .content div > p {
+        width: 70%;
+        font-size: 1.8rem;
+        line-height: 3rem;
+        margin: 0 0 2rem 0; }
+      .wrapper .contact .wrapper .content form {
+        width: 400px; }
+      .wrapper .contact .wrapper .content fieldset {
+        margin: 0 0 15px 0;
+        font-size: 16px; }
+      .wrapper .contact .wrapper .content input,
+      .wrapper .contact .wrapper .content select,
+      .wrapper .contact .wrapper .content textarea {
+        width: 400px;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #011936; }
+      .wrapper .contact .wrapper .content textarea {
+        height: 150px; }
+      .wrapper .contact .wrapper .content button {
+        padding: 1rem 2.5rem;
+        font-size: 1.6rem;
+        background: #011936;
+        color: white;
+        border: none; }
