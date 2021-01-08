@@ -69,6 +69,7 @@ server.post("/contact", (req, res) => {
   };
 
   transporter.sendMail(mailOptions, (error, response) => {
+    console.log(process.env);
     if (error) {
       res.sendFile(path.join(__dirname + "/pages/email-error.html"));
     } else {
