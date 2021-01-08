@@ -247,9 +247,7 @@ body {
     .wrapper .welcome {
       margin-top: 1rem; } }
   .wrapper .welcome .welcome-wrapper {
-    padding: 30px 30px 50px 30px;
-    background: #ffe9f5;
-    background: linear-gradient(335deg, #ffe9f5 0%, #ffd2e6 100%); }
+    padding: 30px 30px 50px 30px; }
     .wrapper .welcome .welcome-wrapper h1 {
       font-size: 5rem;
       font-family: "Quicksand";
