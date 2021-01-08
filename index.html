@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BB Balloon Studio</title>
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="Custom balloon designs, arrangements, birthday balloons, anniversary balloons, party balloons, arches, garlands, based on Oxnard."
+    />
     <link rel="icon" href="logo-16.png" />
     <link rel="stylesheet" href="index.css" />
   </head>
@@ -12,7 +15,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <img src="logo-256.png" />
+        <img src="logo-256.png" alt="BB Balloon Studio Logo" />
         <nav>
           <div class="burger-menu">
             <span></span>
@@ -23,12 +26,12 @@
             <li class="CTA">Place an Order</li>
             <li>Products</li>
             <li>Services</li>
-            <a href="#about-us">
-              <li>About Us</li>
-            </a>
-            <a href="#contact">
-              <li>Contact</li>
-            </a>
+            <li>
+              <a href="#about-us"> About Us </a>
+            </li>
+            <li>
+              <a href="#contact"> Contact </a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -64,103 +67,125 @@
               Lorem Ipsum.
             </p>
           </div>
-          <div class="image"><img src="about-us.jpg" /></div>
+          <div class="image"><img src="about-us.jpg" alt="Our Team" /></div>
         </div>
       </section>
       <section id="contact" class="contact">
         <div class="wrapper">
-        <h2>Contact Us</h2>
-        <div class="content">
-          <div>
-            <p>If you would like to get a quote, or have any questions about our products, you may contact us using the form.</p>
-            <p>For price inqueires, please provide as much detail as possible.</p>
-            <p>We may contact you back for additional details or sample pictures, so make sure you provide a valid email address.</p>
-            <p>If you would like to place an order, we will contact you with the available payment options.</p>
+          <h2>Contact Us</h2>
+          <div class="content">
+            <div>
+              <p>
+                If you would like to get a quote, or have any questions about
+                our products, you may contact us using the form.
+              </p>
+              <p>
+                For price inqueires, please provide as much detail as possible.
+              </p>
+              <p>
+                We may contact you back for additional details or sample
+                pictures, so make sure you provide a valid email address.
+              </p>
+              <p>
+                If you would like to place an order, we will contact you with
+                the available payment options.
+              </p>
+            </div>
+            <form action="/contact" id="contact-form" method="post" role="form">
+              <fieldset>
+                <label for="name">Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label for="email">E-mail</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Your email"
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label for="phone">Phone Number</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="Your phone number (10 digits)"
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label for="event_type">Event Type</label>
+                <select id="event_type" name="event_type" required>
+                  <option selected disabled>Choose an event type</option>
+                  <option value="Party">Party</option>
+                  <option value="Birthday">Birthday</option>
+                  <option value="Anniversary">Anniversary</option>
+                  <option value="Gender Reveal">Gender Reveal</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <label for="date">Date</label>
+                <input
+                  id="date"
+                  name="date"
+                  type="date"
+                  placeholder="Event date"
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label for="location">Location</label>
+                <input
+                  id="location"
+                  name="location"
+                  type="text"
+                  placeholder="Event Location"
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Enter your message here"
+                  rows="3"
+                  required
+                ></textarea>
+              </fieldset>
+              <fieldset>
+                <button type="submit">Submit</button>
+              </fieldset>
+            </form>
           </div>
-        <form action="/contact" id="contact-form" method="post" role="form">
-          <fieldset>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Your name"
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Your email"
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              placeholder="Your phone (10 digits)"
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <select id="event_type" name="event_type" required>
-              <option selected disabled>Choose an event type</option>
-              <option value="Party">Party</option>
-              <option value="Birthday">Birthday</option>
-              <option value="Anniversary">Anniversary</option>
-              <option value="Gender Reveal">Gender Reveal</option>
-            </select>
-          </fieldset>
-          <fieldset>
-            <input
-              id="date"
-              name="date"
-              type="date"
-              placeholder="Event date"
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <input
-              id="location"
-              name="location"
-              type="text"
-              placeholder="Event Location"
-              required
-            />
-          </fieldset>
-          <fieldset>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Enter your message here"
-              rows="3"
-              required
-            ></textarea>
-          </fieldset>
-          <fieldset>
-            <button type="submit">Submit</button>
-          </fieldset>
-        </form>
-      </div>
-    </section>
-      </div>
+        </div>
+      </section>
     </div>
     <script type="text/javascript">
       const target = document.querySelector(".slider-inner-wrapper");
-      target.addEventListener("wheel", (event) => {
-        const toLeft = event.deltaY < 0 && target.scrollLeft > 0;
-        const toRight =
-          event.deltaY > 0 &&
-          target.scrollLeft < target.scrollWidth - target.clientWidth;
-        if (toLeft || toRight) {
-          event.preventDefault();
-          target.scrollLeft += event.deltaY * 5;
-        }
-      });
+      target.addEventListener(
+        "wheel",
+        (event) => {
+          const toLeft = event.deltaY < 0 && target.scrollLeft > 0;
+          const toRight =
+            event.deltaY > 0 &&
+            target.scrollLeft < target.scrollWidth - target.clientWidth;
+          if (toLeft || toRight) {
+            event.preventDefault();
+            target.scrollLeft += event.deltaY * 5;
+          }
+        },
+        { passive: true }
+      );
       const burgerMenu = document.querySelector(".burger-menu");
       burgerMenu.addEventListener("click", function (event) {
         event.stopPropagation();
