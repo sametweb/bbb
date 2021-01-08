@@ -6,6 +6,7 @@ const extractName = require("./utils/extractName");
 const formatDate = require("./utils/formatDate");
 const mailBody = require("./utils/mailBody");
 var path = require("path");
+var sizeOf = require("image-size");
 
 const fs = require("fs");
 
@@ -28,9 +29,14 @@ fs.promises
   .readdir(imgDir)
   .then((files) => {
     for (file of files) {
-      images += `<div class="image"><img src="${file}" alt="${extractName(
-        file
-      )}" /></div>`;
+      var size = sizeOf("img/optimized/JPEG/" + file);
+      images += `<div class="image">
+        <img src="${file}" 
+          width="${size.width}" 
+          height="${size.height}" 
+          alt="${extractName(file)}" 
+        />
+      </div>`;
     }
     return images;
   })

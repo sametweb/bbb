@@ -59,6 +59,9 @@ body {
         display: flex;
         a {
           color: black;
+          &:hover {
+            color: white;
+          }
         }
         @include mobile() {
           a {
@@ -201,6 +204,7 @@ body {
         .image {
           img {
             height: 300px;
+            width: auto;
             margin-right: 30px;
             border-radius: 10px;
           }

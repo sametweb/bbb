@@ -162,6 +162,8 @@ body {
       display: flex; }
       .wrapper header nav ul a {
         color: black; }
+        .wrapper header nav ul a:hover {
+          color: white; }
       @media (max-width: 900px) {
         .wrapper header nav ul a {
           color: white; } }
@@ -270,6 +272,7 @@ body {
         height: 1px; }
       .wrapper .products .slider .slider-inner-wrapper .image img {
         height: 300px;
+        width: auto;
         margin-right: 30px;
         border-radius: 10px; }
 
