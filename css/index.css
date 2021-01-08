@@ -175,8 +175,9 @@ body {
         border: 1px solid transparent; }
         .wrapper header nav ul li.CTA {
           background-color: #d3005e;
-          color: white;
           font-weight: bold; }
+          .wrapper header nav ul li.CTA a {
+            color: white; }
         .wrapper header nav ul li:hover {
           background-color: #d3005e;
           color: white;
