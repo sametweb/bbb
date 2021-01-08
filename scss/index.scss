@@ -57,6 +57,9 @@ body {
 
       ul {
         display: flex;
+        a {
+          color: black;
+        }
         @include mobile() {
           a {
             color: white;

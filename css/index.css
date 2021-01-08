@@ -160,6 +160,8 @@ body {
         height: auto; } }
     .wrapper header nav ul {
       display: flex; }
+      .wrapper header nav ul a {
+        color: black; }
       @media (max-width: 900px) {
         .wrapper header nav ul a {
           color: white; } }
