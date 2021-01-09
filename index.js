@@ -1,12 +1,15 @@
-process.env.MY_ENV === "DEV" && require("dotenv").config();
+process.env.NODE_ENV !== "production" && require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
+const sgMail = require("@sendgrid/mail");
 const server = require("./server");
 const extractName = require("./utils/extractName");
 const formatDate = require("./utils/formatDate");
 const mailBody = require("./utils/mailBody");
 var path = require("path");
 var sizeOf = require("image-size");
+
+sgMail.setApiKey(process.env.SG_API_KEY);
 
 const fs = require("fs");
 
@@ -52,21 +55,8 @@ server.get("/", (req, res) => {
 });
 
 server.post("/contact", (req, res) => {
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS,
-    },
-    tls: {
-      // do not fail on invalid certs
-      rejectUnauthorized: false,
-    },
-  });
-
-  const mailOptions = {
+  const mail = {
+    from: "contact@bbballoonstudio.com",
     to: process.env.GMAIL_USER,
     subject: `CONTACT: ${req.body.name} » ${
       req.body.event_type
@@ -74,14 +64,16 @@ server.post("/contact", (req, res) => {
     html: mailBody(req),
   };
 
-  transporter.sendMail(mailOptions, (error, response) => {
-    console.log(process.env);
-    if (error) {
-      res.sendFile(path.join(__dirname + "/pages/email-error.html"));
-    } else {
+  sgMail
+    .send(mail)
+    .then((response) => {
+      console.log(response);
       res.sendFile(path.join(__dirname + "/pages/email-success.html"));
-    }
-  });
+    })
+    .catch((error) => {
+      console.log(JSON.stringify(error));
+      res.sendFile(path.join(__dirname + "/pages/email-error.html"));
+    });
 });
 
 module.exports = server;
