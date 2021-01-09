@@ -56,7 +56,7 @@ server.get("/", (req, res) => {
 
 server.post("/contact", (req, res) => {
   const mail = {
-    from: req.body.email,
+    from: "contact@bbballoonstudio.com",
     to: process.env.GMAIL_USER,
     subject: `CONTACT: ${req.body.name} » ${
       req.body.event_type
