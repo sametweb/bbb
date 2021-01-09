@@ -15,12 +15,14 @@
   <body>
     <div class="wrapper">
       <header>
-        <img
-          src="logo-256.png"
-          width="200"
-          height="200"
-          alt="BB Balloon Studio Logo"
-        />
+        <a href="https://bbballoonstudio.com" alt="BB Balloon Studio Homepage">
+          <img
+            src="logo-256.png"
+            width="200"
+            height="200"
+            alt="BB Balloon Studio Logo"
+          />
+        </a>
         <nav>
           <div class="burger-menu">
             <span></span>
@@ -76,7 +78,7 @@
         <div class="wrapper">
           <h2>Contact Us</h2>
           <div class="content">
-            <div>
+            <div class="description">
               <p>
                 If you would like to get a quote, or have any questions about
                 our products, you may contact us using the form.
@@ -185,8 +187,8 @@
             event.preventDefault();
             target.scrollLeft += event.deltaY * 5;
           }
-        },
-        { passive: true }
+        }
+        // { passive: true }
       );
       const burgerMenu = document.querySelector(".burger-menu");
       burgerMenu.addEventListener("click", function (event) {
@@ -196,6 +198,34 @@
             ? "burger-menu open"
             : "burger-menu";
       });
+      const products = document.querySelectorAll(".product-with-view");
+      products.forEach((p) =>
+        p.addEventListener("click", function (e) {
+          const overlay = document.createElement("div");
+          overlay.classList.add("overlay");
+          const image = document.createElement("img");
+          image.src = e.target.src;
+          if (window.innerWidth > window.innerHeight) {
+            image.height = Math.min(window.innerHeight, image.height) * 0.95;
+          } else {
+            image.width = Math.min(window.innerWidth, image.width) * 0.95;
+          }
+          overlay.append(image);
+          document.body.prepend(overlay);
+          setTimeout(() => {
+            overlay.style.opacity = 1;
+          }, 1);
+          overlay.addEventListener("click", function (event) {
+            const found = document.querySelector(".overlay");
+            if (found) {
+              found.style.opacity = 0;
+              setTimeout(() => {
+                found.remove();
+              }, 100);
+            }
+          });
+        })
+      );
     </script>
   </body>
 </html>

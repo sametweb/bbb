@@ -2,7 +2,7 @@ process.env.NODE_ENV !== "production" && require("dotenv").config();
 const express = require("express");
 const sgMail = require("@sendgrid/mail");
 const server = require("./server");
-const extractName = require("./utils/extractName");
+const imageComponent = require("./utils/imageComponent");
 const formatDate = require("./utils/formatDate");
 const mailBody = require("./utils/mailBody");
 var path = require("path");
@@ -32,13 +32,7 @@ fs.promises
   .then((files) => {
     for (file of files) {
       var size = sizeOf("img/optimized/JPEG/" + file);
-      images += `<div class="image">
-        <img src="${file}" 
-          width="${size.width}" 
-          height="${size.height}" 
-          alt="${extractName(file)}" 
-        />
-      </div>`;
+      images += imageComponent(file, size);
     }
     return images;
   })
