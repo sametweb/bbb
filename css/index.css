@@ -160,21 +160,22 @@ body {
         height: auto; } }
     .wrapper header nav ul {
       display: flex; }
-      .wrapper header nav ul a {
-        color: black; }
-        .wrapper header nav ul a:hover {
-          color: white; }
-      @media (max-width: 900px) {
-        .wrapper header nav ul a {
-          color: white; } }
       .wrapper header nav ul li {
-        padding: 2rem;
         margin-right: 1rem;
         font-size: 1.8rem;
         font-family: "Quicksand";
         text-transform: uppercase;
         border-radius: 4rem;
         border: 1px solid transparent; }
+        .wrapper header nav ul li a {
+          display: block;
+          color: black;
+          padding: 2rem; }
+          .wrapper header nav ul li a:hover {
+            color: white; }
+        @media (max-width: 900px) {
+          .wrapper header nav ul li a {
+            color: white; } }
         .wrapper header nav ul li.CTA {
           background-color: #d3005e;
           font-weight: bold; }

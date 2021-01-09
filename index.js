@@ -1,6 +1,5 @@
 process.env.NODE_ENV !== "production" && require("dotenv").config();
 const express = require("express");
-const nodemailer = require("nodemailer");
 const sgMail = require("@sendgrid/mail");
 const server = require("./server");
 const extractName = require("./utils/extractName");

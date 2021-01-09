@@ -57,19 +57,21 @@ body {
 
       ul {
         display: flex;
-        a {
-          color: black;
-          &:hover {
-            color: white;
-          }
-        }
-        @include mobile() {
-          a {
-            color: white;
-          }
-        }
         li {
-          padding: 2rem;
+          a {
+            display: block;
+            color: black;
+            padding: 2rem;
+
+            &:hover {
+              color: white;
+            }
+          }
+          @include mobile() {
+            a {
+              color: white;
+            }
+          }
           margin-right: 1rem;
           font-size: 1.8rem;
           @include title();
