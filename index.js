@@ -67,7 +67,6 @@ server.post("/contact", (req, res) => {
   sgMail
     .send(mail)
     .then((response) => {
-      console.log(response);
       res.sendFile(path.join(__dirname + "/pages/email-success.html"));
     })
     .catch((error) => {
