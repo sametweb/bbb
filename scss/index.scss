@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #f7f2f2;
 }
 
 .overlay {
@@ -208,7 +208,7 @@ body {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15),
       0 -10px 40px rgba(0, 0, 0, 0.15);
     .slider {
-      background: #d3005e;
+      background: #011936;
       .slider-inner-wrapper {
         scroll-behavior: smooth;
         padding: 30px;
@@ -232,15 +232,123 @@ body {
     }
   }
 
-  .about-us {
-    background: #011936;
+  .company-info {
+    background-color: #d3005e;
     padding: 5rem 0;
+    .wrapper {
+      @include limited-width();
+      padding: 2rem;
+      .content {
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        @include mobile() {
+          width: 100%;
+        }
+        .inline-logo {
+          margin: 0 0 1rem 0;
+          max-width: 545px;
+          width: 100%;
+        }
+        P {
+          font-size: 1.8rem;
+          line-height: 3rem;
+          margin: 0 0 2rem 0;
+          color: white;
+        }
+        .after-logo {
+          @include title();
+          font-size: 3.2rem;
+          line-height: 4.2rem;
+          margin: 0 auto 3rem;
+          max-width: 545px;
+          @include mobile() {
+            font-size: 2.8rem;
+            line-height: 4rem;
+          }
+        }
+      }
+    }
+  }
+
+  .services {
+    padding: 9rem 0 5rem 0;
+    background-color: bisque;
+    .wrapper {
+      @include limited-width();
+      .content {
+        .boxes {
+          display: flex;
+          justify-content: center;
+          margin: 0 0 7rem 0;
+          @include mobile() {
+            flex-direction: column;
+            align-items: center;
+          }
+          .box {
+            width: 40%;
+            padding: 0 2rem;
+            text-align: center;
+            box-sizing: border-box;
+            @include mobile() {
+              width: 100%;
+              margin-bottom: 5rem;
+            }
+            .service-logo {
+              margin: 0 0 5rem 0;
+              text-align: center;
+              img {
+                height: 300px;
+                @include mobile() {
+                  width: 85%;
+                  height: auto;
+                }
+              }
+            }
+            p {
+              font-size: 1.8rem;
+              line-height: 2.8rem;
+              padding: 0 10%;
+            }
+          }
+        }
+        .payment-methods {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: nowrap;
+          align-items: center;
+          width: 100%;
+          max-width: 800px;
+          margin: 0 auto;
+          @include mobile() {
+            flex-direction: column;
+          }
+          img {
+            max-height: 25px;
+            @include mobile() {
+              max-height: 35px;
+              margin: 0 0 3rem 0;
+              max-width: 90%;
+            }
+            &:nth-child(3) {
+              max-height: 18px;
+              @include mobile() {
+                max-height: 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about-us {
+    padding: 10rem 0 5rem;
     .wrapper {
       @include limited-width();
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
       padding: 2rem;
       @include mobile() {
         flex-direction: column;
@@ -251,18 +359,19 @@ body {
         @include mobile() {
           width: 100%;
         }
-        h2 {
-          font-size: 3rem;
-          font-weight: bold;
-          @include title();
-          text-transform: uppercase;
-          padding: 0 0 3rem 0;
+        .excerpt {
+          font-size: 2.6rem;
+          line-height: 4rem;
+          margin-bottom: 3rem;
         }
         p {
           font-size: 1.8rem;
           line-height: 3rem;
           margin: 0 0 2rem 0;
           padding: 0 3rem 0 0;
+          b {
+            font-weight: bold;
+          }
         }
       }
       .image {
@@ -274,8 +383,17 @@ body {
         img {
           width: 95%;
           height: auto;
-          box-shadow: 7px 8px 0 rgba(250, 250, 250, 0.7),
-            -6px -7px 0 rgba(250, 250, 250, 0.2);
+          border-radius: 10px;
+          padding: 10px;
+          background: rgb(171, 139, 52);
+          background: linear-gradient(
+            299deg,
+            rgba(171, 139, 52, 1) 0%,
+            rgba(220, 183, 69, 1) 24%,
+            rgba(251, 230, 161, 1) 50%,
+            rgba(220, 183, 69, 1) 74%,
+            rgba(171, 139, 52, 1) 100%
+          );
         }
       }
     }
@@ -283,6 +401,7 @@ body {
 
   .contact {
     padding: 5rem 0;
+    background-color: #ffe4c4;
     .wrapper {
       @include limited-width();
       padding: 2rem;
@@ -347,7 +466,7 @@ body {
           box-sizing: border-box;
           padding: 8px;
           font-size: 16px;
-          border: 1px solid rgba(1, 25, 54, 0.2);
+          border: 1px solid #fad4a6;
           border-radius: 7px;
         }
         textarea {
