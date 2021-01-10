@@ -404,7 +404,8 @@ body {
       width: 60%; }
       @media (max-width: 900px) {
         .wrapper .about-us .wrapper .content {
-          width: 100%; } }
+          width: 100%;
+          text-align: center; } }
       .wrapper .about-us .wrapper .content .excerpt {
         font-size: 2.6rem;
         line-height: 4rem;
@@ -439,7 +440,8 @@ body {
     padding: 2rem; }
     @media (max-width: 900px) {
       .wrapper .contact .wrapper {
-        padding: 0 1rem; } }
+        padding: 0 1rem;
+        text-align: center; } }
     .wrapper .contact .wrapper h2 {
       font-size: 3rem;
       font-weight: bold;
@@ -491,6 +493,11 @@ body {
         font-size: 16px;
         border: 1px solid #fad4a6;
         border-radius: 7px; }
+        @media (max-width: 900px) {
+          .wrapper .contact .wrapper .content input,
+          .wrapper .contact .wrapper .content select,
+          .wrapper .contact .wrapper .content textarea {
+            font-size: 2rem; } }
       .wrapper .contact .wrapper .content textarea {
         height: 150px; }
       .wrapper .contact .wrapper .content button {
@@ -500,3 +507,7 @@ body {
         color: white;
         border: none;
         border-radius: 7px; }
+        @media (max-width: 900px) {
+          .wrapper .contact .wrapper .content button {
+            width: 100%;
+            font-size: 2rem; } }
