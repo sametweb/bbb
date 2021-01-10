@@ -471,6 +471,7 @@ body {
           border: 1px solid #fad4a6;
           border-radius: 7px;
           -webkit-appearance: none;
+          background: white;
           @include mobile() {
             font-size: 2rem;
           }

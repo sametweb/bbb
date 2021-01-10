@@ -493,7 +493,8 @@ body {
         font-size: 16px;
         border: 1px solid #fad4a6;
         border-radius: 7px;
-        -webkit-appearance: none; }
+        -webkit-appearance: none;
+        background: white; }
         @media (max-width: 900px) {
           .wrapper .contact .wrapper .content input,
           .wrapper .contact .wrapper .content select,
