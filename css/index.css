@@ -505,7 +505,7 @@ body {
         display: block;
         -webkit-appearance: textfield;
         -moz-appearance: textfield;
-        min-height: 1.2em; }
+        min-height: 41px; }
       .wrapper .contact .wrapper .content textarea {
         height: 150px; }
       .wrapper .contact .wrapper .content button {
