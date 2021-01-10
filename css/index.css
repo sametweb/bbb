@@ -501,12 +501,11 @@ body {
           .wrapper .contact .wrapper .content textarea {
             font-size: 2rem;
             min-width: 95%; } }
-      @media (max-width: 900px) {
-        .wrapper .contact .wrapper .content input[type="date"] {
-          display: block;
-          -webkit-appearance: textfield;
-          -moz-appearance: textfield;
-          min-height: 1.2em; } }
+      .wrapper .contact .wrapper .content input[type="date"] {
+        display: block;
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        min-height: 1.2em; }
       .wrapper .contact .wrapper .content textarea {
         height: 150px; }
       .wrapper .contact .wrapper .content button {

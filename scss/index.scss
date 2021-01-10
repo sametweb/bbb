@@ -477,13 +477,11 @@ body {
             min-width: 95%;
           }
         }
-        @include mobile() {
-          input[type="date"] {
-            display: block;
-            -webkit-appearance: textfield;
-            -moz-appearance: textfield;
-            min-height: 1.2em;
-          }
+        input[type="date"] {
+          display: block;
+          -webkit-appearance: textfield;
+          -moz-appearance: textfield;
+          min-height: 1.2em;
         }
 
         textarea {
