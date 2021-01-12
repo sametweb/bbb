@@ -450,7 +450,12 @@ body {
       font-weight: bold;
       font-family: "Quicksand";
       text-transform: uppercase;
-      padding: 0 0 3rem 0; }
+      padding: 0 0 3rem 0;
+      display: flex;
+      justify-content: space-between; }
+      .wrapper .contact .wrapper h2 i {
+        font-style: italic !important;
+        text-transform: capitalize; }
     .wrapper .contact .wrapper .content {
       display: flex;
       justify-content: space-between; }
@@ -482,7 +487,8 @@ body {
             width: 100%; } }
       .wrapper .contact .wrapper .content fieldset {
         margin: 0 0 15px 0;
-        font-size: 16px; }
+        font-size: 16px;
+        text-align: right; }
         .wrapper .contact .wrapper .content fieldset label {
           border: 0;
           clip: rect(0 0 0 0);

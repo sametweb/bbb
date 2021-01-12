@@ -422,6 +422,12 @@ body {
         @include title();
         text-transform: uppercase;
         padding: 0 0 3rem 0;
+        display: flex;
+        justify-content: space-between;
+        i {
+          font-style: italic !important;
+          text-transform: capitalize;
+        }
       }
       .content {
         display: flex;
@@ -461,6 +467,7 @@ body {
         fieldset {
           margin: 0 0 15px 0;
           font-size: 16px;
+          text-align: right;
           label {
             border: 0;
             clip: rect(0 0 0 0);
